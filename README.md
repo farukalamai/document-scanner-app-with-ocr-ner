@@ -10,6 +10,6 @@
    - How pytesseract work
    - How BIO/IOB format works
 
-
-
-
+**2. Data PreProcessing**
+   - Convert the data into Spacy format
+   - Spliting data into Training and test dataset
