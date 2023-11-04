@@ -22,3 +22,13 @@
 
 **4. Predictions**
    - Building predictions pipeline
+
+**5. Improve Model Performance**
+   - Cleaning text for better accuracy -> data_preprocessing
+   6. Document Scanner
+
+**6. Document Scanner**
+   - 
+
+**6. Document Scanner Web App**
+   - 
