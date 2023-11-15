@@ -14,6 +14,30 @@
         </div>
 
     </form>
+    <br>
+    {% if fileupload %}
+    <div class="row">
+        <button class="btn btn-primary" id="sendData">Wrap Document and Extract Text</button>
+    </div>
+    {% endif %}
 </div>
 
+<!--Creating Canvas-->
+{% if fileupload %}
+
+<p>{{message}}</p>
+<div class="row">
+    <div class="col">
+        <canvas id="canvas" style="max-width: 100%; height: auto;"></canvas>
+    </div>
+    <div class="col" id="loader" align="center">
+        
+    </div>
+</div>
+
+<script>
+    loadPoints({{ points | tojson }})
+</script>
+
+{% endif %}
 {% endblock %}
