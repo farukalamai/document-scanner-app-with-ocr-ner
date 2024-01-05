@@ -6,16 +6,16 @@ from imutils.perspective import four_point_transform
 
 
 def save_upload_image(fileObj):
-    filename = fileObj.filename
-
-    name, ext = filename.split('.')
-
+    filename = fileObj.filename    
+    name , ext = filename.split('.')    
     save_filename = 'upload.'+ext
-    upload_image_path = settings.join_path(settings.SAVE_DIR, save_filename)
-
+    upload_image_path = settings.join_path(settings.SAVE_DIR, 
+                                           save_filename)
+    
     fileObj.save(upload_image_path)
-
+    
     return upload_image_path
+
 
 def array_to_json_format(numpy_array):
     points = []
@@ -23,7 +23,8 @@ def array_to_json_format(numpy_array):
         points.append({'x':pt[0],'y':pt[1]})
         
     return points
-     
+
+
 class DocumentScan():
     def __init__(self):
         pass
@@ -66,7 +67,6 @@ class DocumentScan():
     
     def document_scanner(self,image_path):
         self.image = cv2.imread(image_path)
-
         img_re,self.size = self.resizer(self.image)
         filename = 'resize_image.jpg'
         RESIZE_IMAGE_PATH = settings.join_path(settings.MEDIA_DIR,filename)
@@ -116,5 +116,3 @@ class DocumentScan():
         magic_color = self.apply_brightness_contrast(wrap_image,brightness=40,contrast=60)
         
         return magic_color
-
-
